@@ -16,7 +16,7 @@ public class SafeStopThread1 {
 				t1.interrupt();
 				System.out.println("stopping ...");
 			}
-		}, 100);
+		}, 0);
 	}
 }
 

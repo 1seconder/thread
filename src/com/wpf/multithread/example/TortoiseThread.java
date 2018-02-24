@@ -7,16 +7,18 @@ public class TortoiseThread extends Animal {
 	private String tName;
 
 	public TortoiseThread(String name) {
+		this.tName = name;
 		setName(name);
 	}
 
 	@Override
 	public void running() {
 
-		double dis = 0.1;
+		double dis = 5;
 		length -= dis;
-
+		System.out.println(tName + "跑了   " + dis + " m ,距离终点还有   " + length + " m ");
 		if (length <= 0) {
+
 			length = 0;
 			System.out.println(tName + "  取得了胜利 ");
 
@@ -25,12 +27,12 @@ public class TortoiseThread extends Animal {
 			}
 
 		}
-		System.out.println(tName + "跑了   " + dis + " m ,距离终点还有   " + length + " m ");
 
 		try {
-			sleep(100);
+			sleep(1000);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			// e.printStackTrace();
+			return;
 		}
 
 	}

@@ -13,14 +13,14 @@ public class StopAnimal implements CallToBack {
 
 	@Override
 	public void win() {
-		an.stop();
-	}
-	
-	public static void main(String[] args) {
-		new Thread(){
-			
-		};
+		// new Timer().schedule(new TimerTask() {
+		//
+		// @Override
+		// public void run() {
+				an.flag = false;
+				System.out.println(an.getName() + "  stopping ...");
+//			}
+//		}, 0);
 	}
 
-	
 }

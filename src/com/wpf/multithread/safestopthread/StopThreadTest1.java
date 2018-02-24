@@ -19,7 +19,7 @@ public class StopThreadTest1 {
 		Thread t1 = new Thread(mThread, "main");
 		t1.start();
 		for (int i = 0; i < 5; i++) {
-			new Thread(mThread).start();
+			new Thread(mThread, "main" + i).start();
 		}
 		t1.stop();
 

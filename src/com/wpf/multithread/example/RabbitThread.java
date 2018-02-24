@@ -14,26 +14,27 @@ public class RabbitThread extends Animal {
 	@Override
 	public void running() {
 
-		double dis = 0.5;
+		double dis = 5;
 		length -= dis;
+		System.err.println(tName + "跑了   " + dis + " m ,距离终点还有   " + length + " m ");
 		if (length <= 0) {
 			length = 0;
-			System.out.println(tName + "  获得了胜利 ");
+			System.err.println(tName + "  获得了胜利 ");
 
 			if (null != callToBack) {
 				callToBack.win();
 			}
 		}
 
-		System.out.println(tName + "跑了   " + dis + " m ,距离终点还有   " + length + " m ");
-
 		if (length % 2 == 0) {
 			try {
 				sleep(1000);
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				// e.printStackTrace();
+				return;
 			}
 		}
+
 	}
 
 	public String gettName() {

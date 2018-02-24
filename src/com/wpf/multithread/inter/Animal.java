@@ -4,16 +4,20 @@ public abstract class Animal extends Thread {
 	// 比赛的长度
 	public double length = 20;
 
+	public boolean flag = true;
+
 	// 抽象方法需要子类实现
 	public abstract void running();
 
 	// 在父类重写run方法，在子类只要重写running方法就可以了
 	@Override
 	public void run() {
-		super.run();
+		// super.run();
+		while (flag && length > 0) {
+			synchronized ("") {
+				running();
+			}
 
-		while (length > 0) {
-			running();
 		}
 	}
 

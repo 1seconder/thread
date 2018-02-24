@@ -18,7 +18,7 @@ public class SafeStopThread {
 				t.terminate();
 				System.out.println("stopping...");
 			}
-		}, 100);
+		}, 0);
 
 	}
 }
@@ -27,7 +27,7 @@ class Safe_Stop_Thread extends Thread {
 
 	// 此变量必须加上volatile
 	private volatile boolean stop = false;
-	
+
 	@Override
 	public void run() {
 		System.out.println("stop value : " + stop);
